@@ -32,6 +32,7 @@ albedo_color = Color(0.933333, 0.772549, 0.0823529, 1)
 albedo_color = Color(0.65098, 0.254902, 1, 1)
 
 [node name="main" type="Node3D"]
+transform = Transform3D(0.96348107, 0, 0.26777655, 0, 1, 0, -0.26777655, 0, 0.96348107, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jjvhh")

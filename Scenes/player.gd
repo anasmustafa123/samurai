@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed := 6.0
+@export var speed := 1.0
 var target_velocity = Vector3.ZERO
 
 @onready var anim = $AnimatedSprite3D
