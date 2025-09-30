@@ -11,7 +11,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# Movement input
 	direction = Input.get_vector("left", "right", "up", "down")
-	
+	print(direction)
 	# Apply velocity
 	velocity = direction * speed
 	move_and_slide()

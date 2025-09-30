@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://1t4pqi0kjivr"]
+[gd_scene load_steps=7 format=4 uid="uid://b4eodv2h0nc83"]
 
 [ext_resource type="Texture2D" uid="uid://5m6oorf1ugyy" path="res://Assets/tiles/BaseTile.png" id="1_8gbba"]
 [ext_resource type="Texture2D" uid="uid://jv4g1qlcke3k" path="res://Assets/tiles/streettile.png" id="2_jjvhh"]
@@ -410,8 +410,11 @@ tile_map_data = PackedByteArray("AAD/////BAAAAAAAAAAAAAMABAAAAAAAAAABAP//BAAAAAA
 tile_set = SubResource("TileSet_8ff1k")
 
 [node name="2Dplayer" parent="." instance=ExtResource("3_kry3j")]
+position = Vector2(166, 143)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 149)
+zoom = Vector2(2, 2)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

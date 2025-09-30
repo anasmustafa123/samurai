@@ -1,7 +1,32 @@
-[gd_scene load_steps=14 format=3 uid="uid://cielqgvnj4vjn"]
+[gd_scene load_steps=21 format=3 uid="uid://cielqgvnj4vjn"]
 
 [ext_resource type="Texture2D" uid="uid://bksihr2agyb7l" path="res://Assets/Samurai/Walk.png" id="1_255sr"]
 [ext_resource type="Script" uid="uid://cuij40jqfjpho" path="res://Scenes/player.gd" id="1_pp4yd"]
+[ext_resource type="Texture2D" uid="uid://876mjdvk7i1o" path="res://Assets/Samurai/Idle.png" id="2_6t5aa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(0, 36, 128, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(128, 36, 128, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(256, 36, 128, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(384, 36, 128, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(512, 36, 128, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(640, 36, 128, 92)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pp4yd"]
 atlas = ExtResource("1_255sr")
@@ -41,6 +66,29 @@ region = Rect2(1024, 28, 128, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_phuyr"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgqql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkybt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pp4yd")
@@ -84,8 +132,7 @@ script = ExtResource("1_pp4yd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_phuyr")
-animation = &"walk"
-frame_progress = 0.900921
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
