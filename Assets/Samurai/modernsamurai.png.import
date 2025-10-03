@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5m6oorf1ugyy"
-path="res://.godot/imported/BaseTile.png-f1577e65a435977f310d33f508832658.ctex"
+uid="uid://bb8e0ob3y8pxn"
+path="res://.godot/imported/modernsamurai.png-0f01ae2bed53cb67b2cedba3ee090a3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tiles/BaseTile.png"
-dest_files=["res://.godot/imported/BaseTile.png-f1577e65a435977f310d33f508832658.ctex"]
+source_file="res://Assets/Samurai/modernsamurai.png"
+dest_files=["res://.godot/imported/modernsamurai.png-0f01ae2bed53cb67b2cedba3ee090a3b.ctex"]
 
 [params]
 

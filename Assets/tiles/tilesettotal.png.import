@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwifs471sd21g"
-path="res://.godot/imported/baseTileright.png-fc14f8542e724f2c48ad9ac945393838.ctex"
+uid="uid://c51gpag3m0msd"
+path="res://.godot/imported/tilesettotal.png-a8a9e0f50540a2cb3234ec2039cc41cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tiles/baseTileright.png"
-dest_files=["res://.godot/imported/baseTileright.png-fc14f8542e724f2c48ad9ac945393838.ctex"]
+source_file="res://Assets/tiles/tilesettotal.png"
+dest_files=["res://.godot/imported/tilesettotal.png-a8a9e0f50540a2cb3234ec2039cc41cd.ctex"]
 
 [params]
 

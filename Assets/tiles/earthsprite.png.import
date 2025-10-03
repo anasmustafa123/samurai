@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcbrlerpyuomj"
-path="res://.godot/imported/baseTiletop.png-4875c18becb60ee8cf5d21d6aa6c4e8c.ctex"
+uid="uid://cmnkmoodork0w"
+path="res://.godot/imported/earthsprite.png-8c36402c95ce0f029df835f3e463e6a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tiles/baseTiletop.png"
-dest_files=["res://.godot/imported/baseTiletop.png-4875c18becb60ee8cf5d21d6aa6c4e8c.ctex"]
+source_file="res://Assets/tiles/earthsprite.png"
+dest_files=["res://.godot/imported/earthsprite.png-8c36402c95ce0f029df835f3e463e6a2.ctex"]
 
 [params]
 
