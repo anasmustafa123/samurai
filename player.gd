@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 			anim.play('idle')
 		
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	#position = position.clamp(Vector2.ZERO, screen_size)
 
 func _do_attack(anim_name: String) -> void:
 	#if attack_queue.size() == 0:
