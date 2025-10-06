@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://bta2dbmsqbnrp"]
+
+[ext_resource type="Texture2D" uid="uid://ddk2vvcgbs01a" path="res://Assets/samurai villian/samurai_villian_running.png" id="1_tn4y2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63ony"]
+atlas = ExtResource("1_tn4y2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk2wr"]
+atlas = ExtResource("1_tn4y2")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sod2"]
+atlas = ExtResource("1_tn4y2")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mlev"]
+atlas = ExtResource("1_tn4y2")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btpeq"]
+atlas = ExtResource("1_tn4y2")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w7i8"]
+atlas = ExtResource("1_tn4y2")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3mm3"]
+atlas = ExtResource("1_tn4y2")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knbv1"]
+atlas = ExtResource("1_tn4y2")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6fp3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63ony")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk2wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sod2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mlev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btpeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w7i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3mm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knbv1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_itb6s"]
+radius = 17.0
+height = 90.0
+
+[node name="villian" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 19)
+sprite_frames = SubResource("SpriteFrames_6fp3o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 15)
+shape = SubResource("CapsuleShape2D_itb6s")
