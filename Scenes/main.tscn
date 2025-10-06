@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=4 uid="uid://1t4pqi0kjivr"]
+[gd_scene load_steps=16 format=4 uid="uid://1t4pqi0kjivr"]
 
 [ext_resource type="Texture2D" uid="uid://b4o7l5ogpy1mn" path="res://Assets/imgs/background.jpg" id="2_21xkr"]
 [ext_resource type="Texture2D" uid="uid://c51gpag3m0msd" path="res://Assets/tiles/tilesettotal.png" id="2_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://bg55h4628vxny" path="res://Assets/tiles/tilesbackgroundplain.png" id="3_21xkr"]
-[ext_resource type="PackedScene" uid="uid://cielqgvnj4vjn" path="res://Scenes/player.tscn" id="3_kry3j"]
 [ext_resource type="Texture2D" uid="uid://bb8e0ob3y8pxn" path="res://Assets/Samurai/modernsamurai.png" id="4_6bp64"]
 [ext_resource type="Texture2D" uid="uid://cmnkmoodork0w" path="res://Assets/tiles/earthsprite.png" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://dl3sftrcahrng" path="res://Assets/tiles/multishrine.png" id="7_ynf5e"]
@@ -203,9 +202,6 @@ sources/0 = SubResource("TileSetAtlasSource_hptm8")
 
 [node name="2Dmain" type="Node2D"]
 
-[node name="2Dplayer" parent="." instance=ExtResource("3_kry3j")]
-position = Vector2(2, -87)
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -223,8 +219,8 @@ tile_map_data = PackedByteArray("AAD0//z/CQAAAAEAAAD1//z/CQAAAAEAAAD2//z/CQAAAAE
 tile_set = SubResource("TileSet_jjvhh")
 
 [node name="Earthsprite" type="Sprite2D" parent="UpperLayer"]
-position = Vector2(414, -264.5)
-scale = Vector2(3.0000002, 2.7812507)
+position = Vector2(452, -268)
+scale = Vector2(3.093751, 2.9296877)
 texture = ExtResource("5_kry3j")
 
 [node name="MiddleLayer" type="Node2D" parent="."]
