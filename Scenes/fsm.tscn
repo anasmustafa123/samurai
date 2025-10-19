@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b608p87evvh4e"]
+
+[ext_resource type="Script" uid="uid://bpcgx0w12e0ye" path="res://FiniteStateMachine.gd" id="1_rmcdg"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_rmcdg")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb8e0ob3y8pxn"
-path="res://.godot/imported/modernsamurai.png-0f01ae2bed53cb67b2cedba3ee090a3b.ctex"
+uid="uid://j3tcppa0s8u6"
+path="res://.godot/imported/teleportfadein.png-101f660a7b8ef0bc461719e4726e01f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Samurai/modernsamurai.png"
-dest_files=["res://.godot/imported/modernsamurai.png-0f01ae2bed53cb67b2cedba3ee090a3b.ctex"]
+source_file="res://Assets/Samurai/teleportfadein.png"
+dest_files=["res://.godot/imported/teleportfadein.png-101f660a7b8ef0bc461719e4726e01f6.ctex"]
 
 [params]
 
