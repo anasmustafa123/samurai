@@ -68,3 +68,6 @@ func Transition(newstate : String):
 	#if(dashspeed <= 0):
 		#state_transition.emit(self, newstate)
 		state_transition.emit(self, newstate)
+
+func Exit():
+	player.velocity.x = 0

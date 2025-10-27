@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b4eodv2h0nc83"]
+[gd_scene load_steps=22 format=4 uid="uid://b4eodv2h0nc83"]
 
 [ext_resource type="Texture2D" uid="uid://b4o7l5ogpy1mn" path="res://Assets/imgs/background.jpg" id="2_21xkr"]
 [ext_resource type="Texture2D" uid="uid://c51gpag3m0msd" path="res://Assets/tiles/tilesettotal.png" id="2_jjvhh"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://m721am0ouio3" path="res://Assets/tiles/tower.png" id="9_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://dseqjn1jp5ft" path="res://Scenes/samurai_boss_1.tscn" id="10_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://cbx1oey72tvw2" path="res://Assets/tiles/shrinestore.png" id="10_hptm8"]
+[ext_resource type="Script" uid="uid://dw0uonnnky7lq" path="res://Scenes/samurai_villan_1/agro_box.gd" id="11_d1ilt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bp64"]
 texture = ExtResource("2_21xkr")
@@ -205,7 +206,26 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_hptm8")
 
-[node name="2Dmain" type="Node2D"]
+[sub_resource type="GDScript" id="GDScript_hptm8"]
+script/source = "extends Area2D
+@export var target_area_path: NodePath
+
+# On TeleportArea (temporary test)
+func _ready():
+	pass
+	#body_entered.connect(func(a): print(\"Detected something:\", a.name))
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hptm8"]
+size = Vector2(53, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1ilt"]
+size = Vector2(90, 113.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6iyac"]
+size = Vector2(957, 388.5)
+
+[node name="main" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -369,14 +389,56 @@ position = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD//wAACAAFAAEAAAAAAAAACAACAAAAAAABAAAACAAFAAEAAAACAAAACAAFAAEAAAADAAAACAACAAAAAAD8/wAACAACAAAAAAD9/wAACAAFAAEAAAD+/wAACAAFAAEAAAD8/wEACAAAAAAAAAD9/wEACAAAAAEAAAD+/wEACAAAAAEAAAD//wEACAAAAAEAAAAAAAEACAAAAAAAAAABAAEACAAAAAEAAAACAAEACAAAAAEAAAADAAEACAAAAAAAAAD8/wIACAABAAAAAAD9/wIACAAEAAAAAAD+/wIACAAEAAAAAAD//wIACAAEAAAAAAAAAAIACAABAAAAAAABAAIACAABAAAAAAACAAIACAAEAAAAAAADAAIACAAEAAAAAAD8/wMACAADAAIAAAD9/wMACAADAAEAAAD+/wMACAADAAAAAAD//wMACAADAAAAAAAAAAMACAADAAIAAAABAAMACAADAAIAAAACAAMACAADAAAAAAADAAMACAADAAEAAAD4/wAACAAFAAEAAAD5/wAACAACAAAAAAD6/wAACAAFAAEAAAD7/wAACAACAAAAAAD4/wEACAAAAAEAAAD5/wEACAAAAAEAAAD6/wEACAAAAAAAAAD7/wEACAAAAAAAAAD4/wIACAAEAAAAAAD5/wIACAABAAAAAAD6/wIACAABAAAAAAD7/wIACAABAAAAAAD4/wMACAADAAAAAAD5/wMACAADAAEAAAD6/wMACAADAAAAAAD7/wMACAADAAEAAAD0/wAACAACAAAAAAD1/wAACAAFAAEAAAD2/wAACAACAAAAAAD3/wAACAACAAAAAAAEAAAACAAFAAEAAAAFAAAACAAFAAEAAAAGAAAACAAFAAEAAAAHAAAACAACAAAAAAAIAAAACAAFAAEAAAD0/wEACAAAAAEAAAD1/wEACAAAAAAAAAD2/wEACAAAAAEAAAD3/wEACAAAAAAAAAAEAAEACAAAAAAAAAAFAAEACAAAAAEAAAAGAAEACAAAAAAAAAAHAAEACAAAAAAAAAAIAAEACAAAAAEAAAD0/wIACAAEAAAAAAD1/wIACAAEAAAAAAD2/wIACAABAAAAAAD3/wIACAABAAAAAAAEAAIACAABAAAAAAAFAAIACAABAAAAAAAGAAIACAAEAAAAAAAHAAIACAAEAAAAAAAIAAIACAAEAAAAAAD0/wMACQABAAAAAAD1/wMACAADAAIAAAD2/wMACAADAAAAAAD3/wMACAADAAAAAAAEAAMACAADAAAAAAAFAAMACAADAAAAAAAGAAMACAADAAEAAAAHAAMACAADAAAAAAAIAAMACAADAAIAAAD0/wQACAADAAIAAAD1/wQACAADAAEAAAD2/wQACAADAAAAAAD3/wQACAADAAIAAAD4/wQACAADAAIAAAD5/wQACAADAAEAAAD6/wQACAADAAEAAAD7/wQACAADAAIAAAD8/wQACAADAAIAAAD9/wQACAADAAEAAAD+/wQACAADAAAAAAD//wQACAADAAIAAAAAAAQACAADAAEAAAABAAQACAADAAAAAAACAAQACAADAAIAAAADAAQACAADAAAAAAAEAAQACAADAAAAAAAFAAQACAADAAAAAAAGAAQACAADAAEAAAAHAAQACAADAAAAAAAIAAQACAADAAEAAAAJAAAACAACAAAAAAAKAAAACAACAAAAAAALAAAACAAFAAEAAAAMAAAACAAFAAEAAAANAAAACAACAAAAAAAOAAAACAACAAAAAAAPAAAACAACAAAAAAAJAAEACAAAAAAAAAAKAAEACAAAAAEAAAALAAEACAAAAAAAAAAMAAEACAAAAAEAAAANAAEACAAAAAAAAAAOAAEACAAAAAEAAAAPAAEACAAAAAAAAAAJAAIACAABAAAAAAAKAAIACAAEAAAAAAALAAIACAAEAAAAAAAMAAIACAABAAAAAAANAAIACAAEAAAAAAAOAAIACAAEAAAAAAAPAAIACAABAAAAAAAJAAMACAADAAAAAAAKAAMACAADAAAAAAALAAMACAADAAAAAAAMAAMACAADAAIAAAANAAMACAADAAIAAAAOAAMACAADAAAAAAAPAAMACAADAAAAAAAKAAQACAADAAAAAAALAAQACAADAAAAAAAMAAQACAADAAIAAAANAAQACAADAAEAAAAOAAQACAADAAAAAAAPAAQACAADAAIAAAAJAAQACAADAAIAAADw/wAACAACAAAAAADx/wAACAACAAAAAADy/wAACAACAAAAAADz/wAACAAFAAEAAADz/wEACAAAAAEAAADy/wEACAAAAAAAAADx/wEACAAAAAEAAADw/wEACAAAAAAAAADz/wIACAABAAAAAADy/wIACAABAAAAAADx/wIACAABAAAAAADw/wIACAAEAAAAAADw/wMACAADAAEAAADx/wMACAADAAIAAADy/wMACAADAAIAAADz/wMACAADAAAAAADw/wQACAADAAEAAADx/wQACAADAAEAAADy/wQACAADAAAAAADz/wQACAADAAIAAAA=")
 tile_set = SubResource("TileSet_jjvhh")
 
+[node name="TeleportArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = SubResource("GDScript_hptm8")
+target_area_path = NodePath("../TeloportArea2")
+
+[node name="ColorRect" type="ColorRect" parent="TeleportArea"]
+offset_left = 148.0
+offset_top = -108.0
+offset_right = 243.0
+offset_bottom = 3.0
+color = Color(0.54509807, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportArea"]
+position = Vector2(194.5, -51)
+shape = SubResource("RectangleShape2D_hptm8")
+
+[node name="TeloportArea2" type="Area2D" parent="."]
+position = Vector2(787, -56)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="TeloportArea2"]
+offset_left = -47.0
+offset_top = -58.0
+offset_right = 48.0
+offset_bottom = 53.0
+color = Color(1, 0.88737637, 0.809571, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeloportArea2"]
+shape = SubResource("RectangleShape2D_d1ilt")
+
 [node name="player" parent="." instance=ExtResource("4_jjvhh")]
 texture_filter = 1
-position = Vector2(-107, -130)
-metadata/_edit_group_ = true
+position = Vector2(79, -137)
+collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(212, 62)
+position_smoothing_enabled = true
 
-[node name="SamuraiBoss1" parent="." instance=ExtResource("10_d1ilt")]
-position = Vector2(-218, -130)
-metadata/_edit_group_ = true
+[node name="SamuraiBoss1" parent="." groups=["enemies"] instance=ExtResource("10_d1ilt")]
+position = Vector2(-832, -99)
+
+[node name="AgroBox" type="Area2D" parent="." node_paths=PackedStringArray("enemy_owner")]
+collision_layer = 0
+script = ExtResource("11_d1ilt")
+enemy_owner = NodePath("../SamuraiBoss1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AgroBox"]
+position = Vector2(-501.5, -162.25)
+shape = SubResource("RectangleShape2D_6iyac")
+
+[connection signal="body_entered" from="TeleportArea" to="player" method="_on_teleport_area_body_entered"]
+[connection signal="body_exited" from="TeleportArea" to="player" method="_on_teleport_area_body_exited"]

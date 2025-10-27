@@ -11,9 +11,11 @@ func Enter():
 	
 	#Play the attack animation and wait for it to finish, transition from this state is handled by the animation player
 	DetermineAttack()
-	animator.play(current_attack.anim)
+	#animator.play(current_attack.anim)
+	animator.play("kick")
+	
 	await animator.animation_finished
-	state_transition.emit(self, "idle")
+	state_transition.emit(self, "idle_normal")
 
 #Read which attack to use from our two attack nodes
 func DetermineAttack():

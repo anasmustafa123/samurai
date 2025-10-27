@@ -1,21 +1,31 @@
-[gd_scene load_steps=60 format=3 uid="uid://dseqjn1jp5ft"]
+[gd_scene load_steps=93 format=3 uid="uid://dseqjn1jp5ft"]
 
 [ext_resource type="Texture2D" uid="uid://4lhlwv7wrehm" path="res://Assets/samurai_villan_1/fireball.png" id="1_a2148"]
+[ext_resource type="Script" uid="uid://bdphcgahsvo2h" path="res://Scenes/samurai_boss_1.gd" id="1_lusb7"]
 [ext_resource type="Texture2D" uid="uid://1x68pns10seo" path="res://Assets/samurai_villan_1/idle_fight.png" id="2_3r2n6"]
+[ext_resource type="Texture2D" uid="uid://c3hl46mlxbtk4" path="res://Assets/samurai_villan_1/herry_kick.png" id="3_6qtks"]
 [ext_resource type="Texture2D" uid="uid://b4gvpgxbb7tjb" path="res://Assets/samurai_villan_1/idle_normal.png" id="3_kp7qp"]
 [ext_resource type="Texture2D" uid="uid://b85qootx85j2n" path="res://Assets/samurai_villan_1/kick.png" id="4_2ai81"]
 [ext_resource type="Texture2D" uid="uid://m7g2ei6wv3b6" path="res://Assets/samurai_villan_1/run.png" id="5_0j2m2"]
+[ext_resource type="Texture2D" uid="uid://bfsqbok20r1hv" path="res://Assets/samurai_villan_1/jap.png" id="6_hj03i"]
 [ext_resource type="Texture2D" uid="uid://ctlgm1aa5o1w4" path="res://Assets/samurai_villan_1/slide_kick.png" id="6_nm2i0"]
 [ext_resource type="Script" uid="uid://dkj4kufjy6ih7" path="res://Scenes/hitbox.gd" id="7_2yrlh"]
 [ext_resource type="Script" uid="uid://bagjid7in1eus" path="res://Scenes/hurtbox.gd" id="8_3esix"]
-[ext_resource type="Script" uid="uid://svj6oklgo1vs" path="res://Scenes/samurai_villan_1/fsm.gd" id="10_lusb7"]
-[ext_resource type="Script" uid="uid://byflkkq3ytdd8" path="res://Scenes/samurai_villan_1/attacking.gd" id="10_pqfkw"]
-[ext_resource type="Script" uid="uid://bgbm0jq16sw70" path="res://Scenes/samurai_villan_1/kick.gd" id="11_nlnh8"]
-[ext_resource type="Script" uid="uid://cwge43goben3s" path="res://Scenes/samurai_villan_1/run.gd" id="11_x36sp"]
-[ext_resource type="Script" uid="uid://cjuf8wutkchqo" path="res://Scenes/samurai_villan_1/slide.gd" id="12_f5kyg"]
-[ext_resource type="Script" uid="uid://cpo1iucja017d" path="res://Scenes/samurai_villan_1/punch.gd" id="13_lusb7"]
-[ext_resource type="Script" uid="uid://diqesmg2iipg7" path="res://Scenes/samurai_villan_1/idle.gd" id="15_f5kyg"]
-[ext_resource type="Script" uid="uid://dkjsdn5b4y6i3" path="res://Scenes/samurai_villan_1/fighting.gd" id="16_f5kyg"]
+[ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="11_f5kyg"]
+[ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="12_lusb7"]
+[ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="13_cnioa"]
+[ext_resource type="Script" uid="uid://gttsntnrk4lf" path="res://Scenes/samurai_villan_1/in_small_attacking_distance.gd" id="14_1v1f6"]
+[ext_resource type="Script" uid="uid://cb0p3fk8aog3j" path="res://Scenes/samurai_villan_1/is_in_agro_area.gd" id="14_6ts28"]
+[ext_resource type="Script" uid="uid://cv74jjdrwevpr" path="res://addons/beehave/nodes/leaves/action.gd" id="15_1v1f6"]
+[ext_resource type="Script" uid="uid://brlfej6uo2udy" path="res://Scenes/samurai_villan_1/chase_player_action.gd" id="15_cnioa"]
+[ext_resource type="Script" uid="uid://b58rw3314c3lt" path="res://Scenes/samurai_villan_1/in_large_attacking_distance.gd" id="15_w6mum"]
+[ext_resource type="Script" uid="uid://l6wnjumm4fmc" path="res://Scenes/samurai_villan_1/face_player_action.gd" id="15_xosph"]
+[ext_resource type="Script" uid="uid://cls4eqmyxspbq" path="res://Scenes/samurai_villan_1/idle_fight_action.gd" id="16_cnioa"]
+[ext_resource type="Script" uid="uid://gqwvd6wfrjnm" path="res://Scenes/samurai_villan_1/jap_attack_action.gd" id="16_igsdh"]
+[ext_resource type="Script" uid="uid://cbx4jyjc82wk" path="res://Scenes/samurai_villan_1/walk_to_base_condition.gd" id="17_cnioa"]
+[ext_resource type="Script" uid="uid://4ufjoipvo87i" path="res://Scenes/samurai_villan_1/slide_kick_attack_action.gd" id="17_vk4cq"]
+[ext_resource type="Script" uid="uid://csljenflfepgf" path="res://Scenes/samurai_villan_1/herry_kick_attack_action.gd" id="18_6qtks"]
+[ext_resource type="Script" uid="uid://bw1mtwr0og0f" path="res://Scenes/samurai_villan_1/hadouken_attack_action.gd" id="18_8xhib"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3m14"]
 atlas = ExtResource("1_a2148")
@@ -40,6 +50,22 @@ region = Rect2(512, 0, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6ga0"]
 atlas = ExtResource("1_a2148")
 region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o5ts"]
+atlas = ExtResource("3_6qtks")
+region = Rect2(0, 0, 135, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqvcu"]
+atlas = ExtResource("3_6qtks")
+region = Rect2(135, 0, 135, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1wx3"]
+atlas = ExtResource("3_6qtks")
+region = Rect2(270, 0, 135, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj2qs"]
+atlas = ExtResource("3_6qtks")
+region = Rect2(405, 0, 135, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c20k2"]
 atlas = ExtResource("2_3r2n6")
@@ -88,6 +114,18 @@ region = Rect2(256, 0, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_iy45l"]
 atlas = ExtResource("3_kp7qp")
 region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwid0"]
+atlas = ExtResource("6_hj03i")
+region = Rect2(0, 0, 135, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwwmy"]
+atlas = ExtResource("6_hj03i")
+region = Rect2(135, 0, 135, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ehwc"]
+atlas = ExtResource("6_hj03i")
+region = Rect2(270, 0, 135, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rx36y"]
 atlas = ExtResource("4_2ai81")
@@ -149,6 +187,30 @@ region = Rect2(128, 128, 128, 128)
 atlas = ExtResource("5_0j2m2")
 region = Rect2(256, 128, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_igsdh"]
+atlas = ExtResource("1_a2148")
+region = Rect2(0, 10, 128, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk4cq"]
+atlas = ExtResource("1_a2148")
+region = Rect2(128, 10, 128, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qtks"]
+atlas = ExtResource("1_a2148")
+region = Rect2(256, 10, 128, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj03i"]
+atlas = ExtResource("1_a2148")
+region = Rect2(384, 10, 128, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcx4x"]
+atlas = ExtResource("1_a2148")
+region = Rect2(512, 10, 128, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdt3u"]
+atlas = ExtResource("1_a2148")
+region = Rect2(640, 10, 128, 118)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_i10kl"]
 atlas = ExtResource("6_nm2i0")
 region = Rect2(0, 0, 128, 128)
@@ -194,8 +256,25 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e6ga0")
 }],
-"loop": true,
+"loop": false,
 "name": &"fireball",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7o5ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqvcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1wx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj2qs")
+}],
+"loop": true,
+"name": &"herry_kick",
 "speed": 5.0
 }, {
 "frames": [{
@@ -246,6 +325,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pwid0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwwmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ehwc")
+}],
+"loop": false,
+"name": &"jap",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rx36y")
 }, {
 "duration": 1.0,
@@ -266,7 +359,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ynb3v")
 }],
-"loop": true,
+"loop": false,
 "name": &"kick",
 "speed": 5.0
 }, {
@@ -301,6 +394,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_igsdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk4cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qtks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj03i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcx4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdt3u")
+}],
+"loop": false,
+"name": &"shedooken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_i10kl")
 }, {
 "duration": 1.0,
@@ -318,7 +434,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8jarn")
 }],
-"loop": true,
+"loop": false,
 "name": &"slide_kick",
 "speed": 8.0
 }]
@@ -330,19 +446,284 @@ height = 98.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a2148"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3r2n6"]
+radius = 13.80726
+height = 36.740425
 
-[node name="SamuraiBoss1" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_5b12e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_jd8hl"]
+resource_name = "herry_kick"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"herry_kick"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_f5kyg"]
+resource_name = "idle_fight"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle_fight"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_w6mum"]
+resource_name = "idle_normal"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle_normal"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_5rc1x"]
+resource_name = "jap"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jap"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_lusb7"]
+resource_name = "kick"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"kick"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_6ts28"]
+resource_name = "run"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_cnioa"]
+resource_name = "shedooken"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"shedooken"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_1v1f6"]
+resource_name = "slide_kick"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"slide_kick"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ts28"]
+_data = {
+&"RESET": SubResource("Animation_5b12e"),
+&"herry_kick": SubResource("Animation_jd8hl"),
+&"idle_fight": SubResource("Animation_f5kyg"),
+&"idle_normal": SubResource("Animation_w6mum"),
+&"jap": SubResource("Animation_5rc1x"),
+&"kick": SubResource("Animation_lusb7"),
+&"run": SubResource("Animation_6ts28"),
+&"shedooken": SubResource("Animation_cnioa"),
+&"slide_kick": SubResource("Animation_1v1f6")
+}
+
+[node name="SamuraiBoss1" type="RigidBody2D" node_paths=PackedStringArray("animator")]
+script = ExtResource("1_lusb7")
+animator = NodePath("AnimationPlayer")
+base_point = Vector2(-832, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -1)
 sprite_frames = SubResource("SpriteFrames_l8fb1")
-animation = &"idle_fight"
+animation = &"idle_normal"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, -2)
+position = Vector2(-1, -5)
 shape = SubResource("CapsuleShape2D_y543b")
 
 [node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("7_2yrlh")
 metadata/_custom_type_script = "uid://dkj4kufjy6ih7"
 
@@ -350,49 +731,118 @@ metadata/_custom_type_script = "uid://dkj4kufjy6ih7"
 shape = SubResource("CapsuleShape2D_a2148")
 
 [node name="HurtBox" type="Area2D" parent="."]
+scale = Vector2(3.6937087, 3.429465)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("8_3esix")
 metadata/_custom_type_script = "uid://bagjid7in1eus"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CapsuleShape2D_3r2n6")
 
-[node name="FSM" type="Node" parent="."]
-script = ExtResource("10_lusb7")
-
-[node name="Attacking" type="Node" parent="FSM" node_paths=PackedStringArray("animator", "attacks")]
-script = ExtResource("10_pqfkw")
-animator = NodePath("../../AnimationPlayer")
-attacks = [NodePath("Kick"), NodePath("Slide"), NodePath("Punch")]
-metadata/_custom_type_script = "uid://bkmo5082k7gss"
-
-[node name="Kick" type="Node" parent="FSM/Attacking"]
-script = ExtResource("11_nlnh8")
-anim = "kick"
-damage = 50
-
-[node name="Slide" type="Node" parent="FSM/Attacking"]
-script = ExtResource("12_f5kyg")
-anim = "slide_kick"
-damage = 100
-
-[node name="Punch" type="Node" parent="FSM/Attacking"]
-script = ExtResource("13_lusb7")
-anim = "punch"
-damage = 50
-
-[node name="Run" type="Node" parent="FSM"]
-script = ExtResource("11_x36sp")
-metadata/_custom_type_script = "uid://bkmo5082k7gss"
-
-[node name="Idle" type="Node" parent="FSM"]
-script = ExtResource("15_f5kyg")
-metadata/_custom_type_script = "uid://bkmo5082k7gss"
-
-[node name="Normal" type="Node" parent="FSM/Idle"]
-script = ExtResource("10_pqfkw")
-
-[node name="Fighting" type="Node" parent="FSM/Idle"]
-script = ExtResource("16_f5kyg")
-anim = "idle_fight"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6ts28")
+}
+
+[node name="BeehaveTree" type="Node" parent="." node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("11_f5kyg")
+blackboard = NodePath("@Node@21017")
+actor = NodePath("..")
+metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
+
+[node name="MainSelector" type="Node" parent="BeehaveTree"]
+script = ExtResource("12_lusb7")
+metadata/_custom_type_script = "uid://8hn4kne15ac5"
+
+[node name="ChaseSequence" type="Node" parent="BeehaveTree/MainSelector"]
+script = ExtResource("13_cnioa")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="IsInAgroArea" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence"]
+script = ExtResource("14_6ts28")
+metadata/_custom_type_script = "uid://cbnbvj8prv63i"
+
+[node name="AttackingSelector" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence"]
+script = ExtResource("12_lusb7")
+metadata/_custom_type_script = "uid://8hn4kne15ac5"
+
+[node name="SmallDistanceAttackSequence" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector"]
+script = ExtResource("13_cnioa")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="InSmallAttackingDistance" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence"]
+script = ExtResource("14_1v1f6")
+metadata/_custom_type_script = "uid://cbnbvj8prv63i"
+
+[node name="RandomAttackSequence" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence"]
+script = ExtResource("13_cnioa")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="JapAttackSequence" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence/RandomAttackSequence"]
+script = ExtResource("13_cnioa")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="FacePlayerAction" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence/RandomAttackSequence/JapAttackSequence"]
+script = ExtResource("15_xosph")
+metadata/_custom_type_script = "uid://cv74jjdrwevpr"
+
+[node name="JapAttackAction" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence/RandomAttackSequence/JapAttackSequence"]
+script = ExtResource("16_igsdh")
+metadata/_custom_type_script = "uid://cv74jjdrwevpr"
+
+[node name="SlideKicjAttackSequence" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence/RandomAttackSequence"]
+script = ExtResource("13_cnioa")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="FacePlayerAction" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence/RandomAttackSequence/SlideKicjAttackSequence"]
+script = ExtResource("15_xosph")
+metadata/_custom_type_script = "uid://cv74jjdrwevpr"
+
+[node name="SlideKickAttackAction" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence/RandomAttackSequence/SlideKicjAttackSequence"]
+script = ExtResource("17_vk4cq")
+metadata/_custom_type_script = "uid://cv74jjdrwevpr"
+
+[node name="herryKickAttackSequence" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence/RandomAttackSequence"]
+script = ExtResource("13_cnioa")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="FacePlayerAction" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence/RandomAttackSequence/herryKickAttackSequence"]
+script = ExtResource("15_xosph")
+metadata/_custom_type_script = "uid://cv74jjdrwevpr"
+
+[node name="HerryKickAttackAction" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/SmallDistanceAttackSequence/RandomAttackSequence/herryKickAttackSequence"]
+script = ExtResource("18_6qtks")
+metadata/_custom_type_script = "uid://cv74jjdrwevpr"
+
+[node name="LargeDistanceAttackSequence" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector"]
+script = ExtResource("13_cnioa")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="InLargeAttackingDistance" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/LargeDistanceAttackSequence"]
+script = ExtResource("15_w6mum")
+metadata/_custom_type_script = "uid://cbnbvj8prv63i"
+
+[node name="HadoukenAttackAction" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector/LargeDistanceAttackSequence"]
+script = ExtResource("18_8xhib")
+metadata/_custom_type_script = "uid://cv74jjdrwevpr"
+
+[node name="ChasePlayerAction" type="Node" parent="BeehaveTree/MainSelector/ChaseSequence/AttackingSelector"]
+script = ExtResource("15_cnioa")
+metadata/_custom_type_script = "uid://cv74jjdrwevpr"
+
+[node name="WalkToBaseSequence" type="Node" parent="BeehaveTree/MainSelector"]
+script = ExtResource("13_cnioa")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="WalkToBaseCondition" type="Node" parent="BeehaveTree/MainSelector/WalkToBaseSequence"]
+script = ExtResource("17_cnioa")
+metadata/_custom_type_script = "uid://cbnbvj8prv63i"
+
+[node name="WalkToBaseAction" type="Node" parent="BeehaveTree/MainSelector/WalkToBaseSequence"]
+script = ExtResource("15_1v1f6")
+metadata/_custom_type_script = "uid://cv74jjdrwevpr"
+
+[node name="IdleFightAction" type="Node" parent="BeehaveTree/MainSelector"]
+script = ExtResource("16_cnioa")
+metadata/_custom_type_script = "uid://cv74jjdrwevpr"
